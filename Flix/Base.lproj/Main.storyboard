@@ -25,6 +25,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S5c-Be-ICD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="743"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="GU7-yt-Csq">
+                                            <rect key="frame" x="0.0" y="181" width="375" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="153" id="xYJ-at-SxH" customClass="MovieCell" customModule="Flix" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="153"/>
@@ -34,7 +38,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnl-DS-PXQ">
-                                                            <rect key="frame" x="15" y="15" width="76" height="110"/>
+                                                            <rect key="frame" x="15" y="15" width="76" height="127"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
@@ -69,6 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="GU7-yt-Csq" id="zkB-Xc-mn3"/>
                         <outlet property="tableView" destination="S5c-Be-ICD" id="Hle-li-MV1"/>
                     </connections>
                 </viewController>

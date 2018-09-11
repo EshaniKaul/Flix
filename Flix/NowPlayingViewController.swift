@@ -9,14 +9,17 @@
 import UIKit
 import AlamofireImage
 
-class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    //@IBOutlet weak var searchBar: UISearchBar!
     
     var movies: [[String:Any]] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
+        //searchBar.delegate = self
         super.viewDidLoad()
         
         tableView.delegate = self
@@ -26,7 +29,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self
+        // Start the activity indicator
+        activityIndicator.startAnimating()
         fetchMovies()
+        // Stop the activity indicator
+        // Hides automatically if "Hides When Stopped" is enabled
+        activityIndicator.stopAnimating()
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl)
